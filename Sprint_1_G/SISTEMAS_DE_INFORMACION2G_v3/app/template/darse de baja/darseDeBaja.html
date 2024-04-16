@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darse de baja de una materia</title>
+  <link rel="stylesheet" href="darseDeBaja.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Darse de baja de una materia</h1>
+      <form id="bajaForm">
+        <label for="codigo">Código de la materia:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <button type="button" onclick="confirmarBaja()">Confirmar baja</button>
+        <label for="motivo">Motivo de la baja:</label>
+        <textarea id="motivo" name="motivo" required></textarea>
+        <button type="button" id="submitBtn" style="display: none;">Enviar solicitud de baja</button>
+      </form>
+      <div id="confirmacionBaja" style="display: none;">
+        <h2>Se ha dado de baja correctamente de la materia.</h2>
+        <p>Gracias por utilizar nuestro servicio.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function confirmarBaja() {
+      var codigo = document.getElementById('codigo').value;
+      var motivo = document.getElementById('motivo').value;
+      if (codigo !== '' && motivo !== '') { // Si se han introducido el código y el motivo
+        if (confirm('¿Está seguro que quiere darse de baja en esta materia?')) {
+          // Si se confirma, ocultar el formulario y mostrar el mensaje de confirmación
+          document.getElementById('bajaForm').style.display = 'none';
+          document.getElementById('confirmacionBaja').style.display = 'block';
+        }
+      } else {
+        alert('Por favor, introduce el código de la materia y el motivo de la baja.');
+      }
+    }
+  </script>
+</body>
+</html>
