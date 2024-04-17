@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docente</title>
+    <link rel="stylesheet" href="style_dc.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_dc.css') }}">
+    <style>
+        /* Estilos adicionales para los botones de las materias */
+        #cuerpo button {
+    display: block;
+    margin-bottom: 10px;
+    width: 200px; /* Cambiar el ancho del botón */
+    height: 200px; /* Cambiar la altura del botón */
+    font-size: 16px; /* Opcional: ajustar el tamaño de la fuente */
+}
+        #cuerpo button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function crearMateria() {
+            var nombreMateria = prompt("Por favor, ingrese el nombre de la materia:");
+            if (nombreMateria) {
+                var cuerpo = document.getElementById("cuerpo");
+                var nuevoBoton = document.createElement("button");
+                nuevoBoton.textContent = nombreMateria;
+                nuevoBoton.classList.add("button");
+                cuerpo.appendChild(nuevoBoton);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header id="titulo">
+        <h1>Bienvenido docente</h1>
+        <div class="button-container">
+            <button class="button" onclick="crearMateria()">CREAR MATERIA</button>
+            <button class="button">ELIMINAR MATERIA</button>
+        </div>
+    </header>
+    
+    <div id="cuerpo">
+        <!-- Aquí se agregarán los botones de las materias -->
+    </div>
+</body>
+</html>
