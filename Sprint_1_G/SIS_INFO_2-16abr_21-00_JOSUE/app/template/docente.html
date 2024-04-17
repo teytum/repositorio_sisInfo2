@@ -1,0 +1,24 @@
+<!-- ISAI -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Docente</title>
+    <form class="form-control" action="otracosa.html" method="post">
+    <link rel="stylesheet" href="style_dc.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_dc.css') }}">
+</head>
+<body>
+    
+    <header id="titulo">
+        <h1>Bienvenido docente</h1>
+        <form action="{{ url_for('procesar_botones') }}" method="post"></form>
+        <div class="button-container">
+            <button class="button" name="boton1">CREAR MATERIA</button>
+            <button class="button" name="boton2">ELIMINAR MATERIA</button>
+        </div>
+        
+    </header>
+    
+     <h1></h1>
+</body>
+</html>
